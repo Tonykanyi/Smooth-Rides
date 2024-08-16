@@ -504,6 +504,33 @@
       "name": "Rose Kamau",
       "email": "Rose@gmail.com",
       "phoneNumber": "0712345678"
+    },
+    {
+      "id": "13bb",
+      "carId": "2",
+      "pickupDate": "2024-08-16",
+      "returnDate": "2024-08-22",
+      "name": "mikl",
+      "email": "kanyianthony79@gmail.com",
+      "phoneNumber": "07123456"
+    },
+    {
+      "id": "29f7",
+      "carId": "3",
+      "pickupDate": "2024-08-16",
+      "returnDate": "2024-08-23",
+      "name": "Tony Kanyi",
+      "email": "kanyianthony79@gmail.com",
+      "phoneNumber": "0712345678"
+    },
+    {
+      "id": "8033",
+      "carId": "3",
+      "pickupDate": "2024-08-14",
+      "returnDate": "2024-08-13",
+      "name": "Anthony Macharia",
+      "email": "tony@gmail.com",
+      "phoneNumber": "0712345678"
     }
   ]
 }

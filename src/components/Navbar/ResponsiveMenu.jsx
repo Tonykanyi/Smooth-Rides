@@ -22,7 +22,7 @@ const ResponsiveMenu = ({ showMenu }) => {
         <nav className="mt-12">
           <ul className="space-y-4 text-xl">
             {Navlinks.map((data) => (
-              <li>
+              <li key={data.id}> {/* Add a unique key */}
                 <a href={data.link} className="mb-5 inline-block">
                   {data.name}
                 </a>

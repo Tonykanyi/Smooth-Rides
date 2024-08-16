@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { BiSolidSun, BiSolidMoon } from "react-icons/bi";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
 import ResponsiveMenu from "./ResponsiveMenu";
 
 export const Navlinks = [
@@ -27,12 +28,27 @@ export const Navlinks = [
   },
 ];
 
-const Navbar = ({ theme, setTheme }) => {
+const Navbar = ({ theme, setTheme, auth }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("User signed out");
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.error("Error signing out:", error);
+      });
+  };
+
+  // Check if user is authenticated
+  const isAuthenticated = auth && auth.currentUser;
 
   return (
     <div className="relative z-10 shadow-md w-full dark:bg-black dark:text-white duration-300">
@@ -64,6 +80,37 @@ const Navbar = ({ theme, setTheme }) => {
                   onClick={() => setTheme("dark")}
                   className="text-2xl cursor-pointer"
                 />
+              )}
+              {/* Auth Links */}
+              {!isAuthenticated && (
+                <>
+                  <li>
+                    <Link
+                      to="/signup"
+                      className="text-lg font-medium hover:text-primary transition-colors duration-500"
+                    >
+                      Signup
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/login"
+                      className="text-lg font-medium hover:text-primary transition-colors duration-500"
+                    >
+                      Login
+                    </Link>
+                  </li>
+                </>
+              )}
+              {isAuthenticated && (
+                <li>
+                  <button
+                    onClick={handleSignOut}
+                    className="text-lg font-medium hover:text-primary transition-colors duration-500"
+                  >
+                    Signout
+                  </button>
+                </li>
               )}
             </ul>
           </nav>

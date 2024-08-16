@@ -11,6 +11,9 @@ import Testimonial from "./components/Testimonial/Testimonial";
 import Footer from "./components/Footer/Footer";
 import BookingForm from "./components/BookingForm/BookingForm";
 import CarList from "./components/CarList/CarList";
+import Signup from './components/Signup';
+import Login from './components/Login';
+import ProtectedRoute from './components/ProtectedRoutes';
 
 const App = () => {
   // dark mode start
@@ -49,7 +52,9 @@ const App = () => {
           <Route path="/booking" element={<BookingForm />} />
           <Route path="/about" element={<About />} />
           <Route path="/CarList" element={<CarList />} />
-
+          <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/booking" element={<ProtectedRoute><BookingForm /></ProtectedRoute>} />
           {/* Add other routes here */}
         </Routes>
         <Footer />
