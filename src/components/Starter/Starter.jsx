@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import carPng from "../../assets/car.png";
-import starter from "../../assets/starter.png";
+
 import yellowCar from "../../assets/banner-car.png";
 import AOS from "aos";
 
@@ -19,7 +19,7 @@ const Hero = ({ theme }) => {
             className="order-1 sm:order-2"
           >
             <img
-              src={theme === "dark" ? carPng : starter}
+              src={theme === "dark" ? carPng : yellowCar}
               alt=""
               className="sm:scale-125 relative -z-10 max-h-[600px] drop-shadow-[2px_20px_6px_rgba(0,0,0,0.50)]"
             />
