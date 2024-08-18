@@ -101,3 +101,6 @@ Push to the branch (git push origin feature/YourFeature).
 Create a new Pull Request.
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+## my Blog
+https://medium.com/@kanyianthony79/my-react-journey-from-confusion-to-confidence-c0dfa3b60963
