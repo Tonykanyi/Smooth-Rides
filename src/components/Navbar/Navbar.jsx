@@ -16,16 +16,7 @@ export const Navlinks = [
     name: "CARS",
     link: "CarList",
   },
-  {
-    id: 3,
-    name: "ABOUT",
-    link: "/#about",
-  },
-  {
-    id: 4,
-    name: "BOOKING",
-    link: "/booking",
-  },
+
 ];
 
 const Navbar = ({ theme, setTheme, auth }) => {
@@ -69,20 +60,8 @@ const Navbar = ({ theme, setTheme, auth }) => {
                   </Link>
                 </li>
               ))}
-              {/* DarkMode feature implement */}
-              {theme === "dark" ? (
-                <BiSolidSun
-                  onClick={() => setTheme("light")}
-                  className="text-2xl cursor-pointer"
-                />
-              ) : (
-                <BiSolidMoon
-                  onClick={() => setTheme("dark")}
-                  className="text-2xl cursor-pointer"
-                />
-              )}
-              {/* Auth Links */}
-              {!isAuthenticated && (
+                {/* Auth Links */}
+                {!isAuthenticated && (
                 <>
                   <li>
                     <Link
@@ -114,6 +93,8 @@ const Navbar = ({ theme, setTheme, auth }) => {
               )}
             </ul>
           </nav>
+              
+            
           {/* Mobile view */}
           <div className="flex items-center gap-4 md:hidden">
             {/* Dark mode */}
